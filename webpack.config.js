@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
     module: {
@@ -13,6 +12,28 @@ module.exports = {
           use: ['babel-loader']
         }
       ]
+    },
+    module: {
+      rules: [
+        {
+          test: /\.s[ac]ss$/i,
+          use: [
+            "style-loader",
+            {
+              loader: "css-loader",
+              options: {
+                sourceMap: true,
+              },
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true,
+              },
+            },
+          ],
+        },
+      ],
     },
     devtool: 'source-map',
     resolve: {
