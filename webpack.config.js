@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
@@ -12,8 +13,16 @@ module.exports = {
           use: ['babel-loader']
         },
         {
+          // html configuration
+          test: /\.html$/,
+          use: {
+            loader: "html-loader"
+          }
+        },
+        {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: 'asset/resource',
+     
         },
       ]
     },
@@ -45,6 +54,11 @@ module.exports = {
       extensions: ['*', '.js']
     },
     plugins: [
+      new CopyWebpackPlugin({
+        patterns: [
+          {from: "src/assets/icons", to: "assets/icons/",}
+        ],
+      }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
           title: 'Hello Webpack bundled JavaScript Project',
@@ -53,7 +67,8 @@ module.exports = {
       ],
     output: {
       path: path.resolve(__dirname, './dist'),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      assetModuleFilename: 'assets/[name][ext]'
     },
     devServer: {
         static: path.resolve(__dirname, './dist'),

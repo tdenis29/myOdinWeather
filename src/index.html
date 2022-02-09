@@ -4,31 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
     <title>myOdinWeather</title>
 </head>
 <body>
    <div class="root">
     <header>
 
-        <div class="site-title">
-            <h1>OdinWeather</h1>
-        </div>
+        <div class="top-header">
+            <div class="input-container">
+                <form>
+                    <label for="search">Search City
+                        <input type="text" name="search" id="searchCity" placeholder="Search City">    
+                    </label>
+                </form>
+            </div>
 
-        <div class="input-container">
-            <label for="search">Search City
-                <input type="text" name="search" id="searchCity" placeholder="Search City">    
-            </label>
-        </div>
-
-        <div class="toggle-container">
-            <div class="switch-field">
-                <input type="radio" id="radio-one" name="switch-one" value="yes" checked/>
-                <label for="radio-one">C&#176;</label>
-                <input type="radio" id="radio-two" name="switch-one" value="no" />
-                <label for="radio-two">F&#176;</label>
+            <div class="toggle-container">
+                <div class="switch-field">
+                    <input type="radio" id="radio-one" name="switch-one" value="yes" checked/>
+                    <label for="radio-one">C&#176;</label>
+                    <input type="radio" id="radio-two" name="switch-one" value="no" />
+                    <label for="radio-two">F&#176;</label>
+                </div>
             </div>
         </div>
+
+     
     </header>
 
     <main>
@@ -37,8 +40,17 @@
 
                 <div class="weather-card-top">
 
+                    <div class="weather-card-top-date-con">
+                        <p class="weather-card-top-date">Thursday, 12th, 20222</p>
+                    </div>
+
+
                     <div class="waether-card-top-location">
                         <h2 class="location-title">Calgary</h2>
+                    </div>
+
+                    <div class="weather-card-top-temp">
+                        <p class="temp">12&#176;</p>
                     </div>
 
                     <div class="weather-card-top-icon">
@@ -51,16 +63,14 @@
                         <p class="weathertitle">Thunderstorms</p>
                     </div>
 
-                    <div class="weather-card-top-temp">
-                        <p class="temp">12&#176;</p>
-                    </div>
+                 
                 </div>
 
                 <div class="weather-card-bottom">
                     <div class="weather-card-bottom-row">
                         <div class="stats-container">
                             <div class="helper-icon">
-                                <img src="./icons/uv-index.svg" alt="" srcset="">
+                                <img src="./assets/icons/uv-index.svg" alt="" srcset="">
                             </div>
                             <div class="right">
                                 <p class="stats-title">UV Index</p>
@@ -70,7 +80,7 @@
 
                         <div class="stats-container">
                             <div class="helper-icon">
-                                <img src="./icons/wind.svg" alt="" srcset="">    
+                                <img src="./assets/icons/wind.svg" alt="" srcset="">    
                            </div>
 
                            <div class="right">
@@ -83,7 +93,7 @@
                     <div class="weather-card-bottom-row">
                         <div class="stats-container">
                             <div class="helper-icon">
-                                <img src="./icons/thermometer.svg" alt="" srcset="">
+                                <img src="./assets/icons/thermometer.svg" alt="" srcset="">
                             </div>
                             <div class="right">
                                 <p class="stats-title">Feels Like</p>
@@ -93,7 +103,7 @@
 
                         <div class="stats-container">
                             <div class="humidity-icon helper-icon">
-                               <img src="./icons/humidity.svg" alt="" srcset="">
+                               <img src="./assets/icons/uv-index.svg" alt="" srcset="">
                             </div>
                             <div class="right">
                                 <p class="stats-title">Humidity</p>
@@ -101,10 +111,116 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>        
+        </div> 
+        <div class="appendForecast">
+        <div class="foreCast-Card">
+
+            <div class="foreCast-Card-day-con">
+                <p class="foreCast-Card-day">Monday</p>
+            </div>
+
+            <div class="foreCast-Card-img-con">
+                <img class="foreCast-Card-img" src="./assets/icons/thunderstorms-night-overcast-snow.svg">
+            </div>
+
+            <div class="foreCast-Card-temp-con">
+                <p class="foreCast-Card-temp">14&#176;</p>
+            </div>
+        </div>
+
+        <div class="foreCast-Card">
+
+            <div class="foreCast-Card-day-con">
+                <p class="foreCast-Card-day">Monday</p>
+            </div>
+
+            <div class="foreCast-Card-img-con">
+                <img class="foreCast-Card-img" src="./assets/icons/thunderstorms-night-overcast-snow.svg">
+            </div>
+
+            <div class="foreCast-Card-temp-con">
+                <p class="foreCast-Card-temp">14&#176;</p>
+            </div>
+        </div>
+
+        <div class="foreCast-Card">
+
+            <div class="foreCast-Card-day-con">
+                <p class="foreCast-Card-day">Monday</p>
+            </div>
+
+            <div class="foreCast-Card-img-con">
+                <img class="foreCast-Card-img" src="./assets/icons/thunderstorms-night-overcast-snow.svg">
+            </div>
+
+            <div class="foreCast-Card-temp-con">
+                <p class="foreCast-Card-temp">14&#176;</p>
+            </div>
+            </div>
+
+        <div class="foreCast-Card">
+
+            <div class="foreCast-Card-day-con">
+                <p class="foreCast-Card-day">Monday</p>
+            </div>
+
+            <div class="foreCast-Card-img-con">
+             <img class="foreCast-Card-img" src="./assets/icons/thunderstorms-night-overcast-snow.svg">
+            </div>
+
+            <div class="foreCast-Card-temp-con">
+                <p class="foreCast-Card-temp">14&#176;</p>
+            </div>
+        </div>
+
+        <div class="foreCast-Card">
+
+            <div class="foreCast-Card-day-con">
+                <p class="foreCast-Card-day">Monday</p>
+            </div>
+
+            <div class="foreCast-Card-img-con">
+             <img class="foreCast-Card-img" src="./assets/icons/thunderstorms-night-overcast-snow.svg">
+            </div>
+
+            <div class="foreCast-Card-temp-con">
+                <p class="foreCast-Card-temp">14&#176;</p>
+            </div>
+        </div>
+
+
+        <div class="foreCast-Card">
+
+            <div class="foreCast-Card-day-con">
+                <p class="foreCast-Card-day">Monday</p>
+            </div>
+
+            <div class="foreCast-Card-img-con">
+             <img class="foreCast-Card-img" src="./assets/icons/thunderstorms-night-overcast-snow.svg">
+            </div>
+
+            <div class="foreCast-Card-temp-con">
+                <p class="foreCast-Card-temp">14&#176;</p>
+            </div>
+        </div>
+
+        <div class="foreCast-Card">
+
+            <div class="foreCast-Card-day-con">
+                <p class="foreCast-Card-day">Monday</p>
+            </div>
+
+            <div class="foreCast-Card-img-con">
+             <img class="foreCast-Card-img" src="./assets/icons/thunderstorms-night-overcast-snow.svg">
+            </div>
+
+            <div class="foreCast-Card-temp-con">
+                <p class="foreCast-Card-temp">14&#176;</p>
+            </div>
+        </div>
+          
     </main>
 
    </div>
