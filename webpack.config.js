@@ -10,7 +10,11 @@ module.exports = {
           test: /\.(js)$/,
           exclude: /node_modules/,
           use: ['babel-loader']
-        }
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+        },
       ]
     },
     module: {
@@ -35,6 +39,7 @@ module.exports = {
         },
       ],
     },
+    
     devtool: 'source-map',
     resolve: {
       extensions: ['*', '.js']
