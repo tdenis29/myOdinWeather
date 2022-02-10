@@ -9,14 +9,13 @@
     <title>myOdinWeather</title>
 </head>
 <body>
-   <div class="root">
+   <div id="root">
     <header>
-
         <div class="top-header">
             <div class="input-container">
                 <form>
                     <label for="search">Search City
-                        <input type="text" name="search" id="searchCity" placeholder="Search City">    
+                        <input type="text" max="50" name="search" id="searchCity" placeholder="Search City">    
                     </label>
                 </form>
             </div>
@@ -30,8 +29,6 @@
                 </div>
             </div>
         </div>
-
-     
     </header>
 
     <main>
@@ -41,16 +38,16 @@
                 <div class="weather-card-top">
 
                     <div class="weather-card-top-date-con">
-                        <p class="weather-card-top-date">Thursday, 12th, 20222</p>
+                        <p id="date" class="weather-card-top-date">Thursday, 12th, 20222</p>
                     </div>
 
 
                     <div class="waether-card-top-location">
-                        <h2 class="location-title">Calgary</h2>
+                        <h2 id="locationTitle" class="location-title">Calgary</h2>
                     </div>
 
                     <div class="weather-card-top-temp">
-                        <p class="temp">12&#176;</p>
+                        <p id="temp" class="temp">12&#176;</p>
                     </div>
 
                     <div class="weather-card-top-icon">
@@ -60,8 +57,8 @@
                     </div>
 
                     <div class="weather-card-top-weathertitle">
-                        <p class="weathertitle">Thunderstorms</p>
-                    </div>
+                        <p id="weatherTitle" class="weathertitle">Thunderstorms</p>
+                    </div> 
 
                  
                 </div>
@@ -103,7 +100,7 @@
 
                         <div class="stats-container">
                             <div class="humidity-icon helper-icon">
-                               <img src="./assets/icons/uv-index.svg" alt="" srcset="">
+                               <img src="./assets/icons/humidity.svg" alt="" srcset="">
                             </div>
                             <div class="right">
                                 <p class="stats-title">Humidity</p>
