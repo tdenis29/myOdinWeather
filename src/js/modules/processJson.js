@@ -6,7 +6,7 @@ import { Temps } from "./temps"
 
 export function processJson(obj){
     console.log(obj)
-    const { name, main: {temp, feels_like, humidity}, sys: {country}, wind: {speed},  weather: [weather] } = obj
+    const { name, main: {temp, pressure, humidity}, sys: {country}, wind: {speed},  weather: [weather], visibility } = obj
     const tempsCon = new Temps()
     let temps = tempsCon.tempsConvert(temp)
     let tempsArr = tempsCon.getTemps()
@@ -15,9 +15,10 @@ export function processJson(obj){
         name, 
         country, 
         tempsArr, 
-        feels_like, 
+        pressure, 
         humidity, 
         speed, 
-        weather
+        weather,
+        visibility
     }
 }
