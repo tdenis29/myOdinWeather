@@ -2,7 +2,7 @@ import "../styles.scss";
 
 import { callWeather } from "./modules/callWeather";
 import { Facade } from "./modules/Facade";
-import { processJson } from "./modules/processJson";
+
 import { updateview } from "./modules/updateView"
 
 // callWeather('Los Angeles')

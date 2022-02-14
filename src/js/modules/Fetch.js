@@ -1,6 +1,7 @@
+
 export class Fetch {
     constructor(){
-
+        
     }
     async callWeather(string){
         const apiKey = 'ff5ed1fd0eb8a82fc5d2948347d0000c';
