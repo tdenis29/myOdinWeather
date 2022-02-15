@@ -5,7 +5,7 @@ export class Process {
 */
 
     processJson(obj){
-        console.log(obj)
+        // console.log(obj)
         const { name, main: {temp, pressure, humidity}, sys: {country}, wind: {speed},  weather: [weather], visibility } = obj
         const tempsCon = new Temps()
         let temps = tempsCon.tempsConvert(temp)

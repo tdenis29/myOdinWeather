@@ -1,4 +1,4 @@
-
+//REQUIRES REFERENCE TO TEMPS CLASS LINE 5
 function processJson(obj){
     console.log(obj)
     const { name, main: {temp, pressure, humidity}, sys: {country}, wind: {speed},  weather: [weather], visibility } = obj
