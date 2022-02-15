@@ -1,5 +1,5 @@
 import { Fetch } from "./Fetch";
-import { Process } from "./processJson";
+import { Process } from "./Process";
 import { View } from "./View";
 
 export class Facade {
