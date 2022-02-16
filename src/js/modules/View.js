@@ -45,7 +45,9 @@ export class View {
     }
 
     showLoader = (function () {
+        if(!this.spin.classList.contains('stop')){
         this.spin.classList.toggle('stop')
+        }
         if(!this.weatherContainer.classList.contains('fade-in'))
          this.weatherContainer.classList.add('fade-in')
     }).bind(this);
@@ -53,6 +55,11 @@ export class View {
   
     renderForeCastCards(){
         
+    }
+
+    displayError(error){
+        console.log(error)
+        this.date.textContent = error + ` Sorry something went wrong!`;
     }
     changeTemp(){
         let cacheTemps = []

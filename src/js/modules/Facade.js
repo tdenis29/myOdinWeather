@@ -18,6 +18,7 @@ export class Facade {
                 this.fetch.callWeather(this.searchCity.value)
                 .then(this.process.processJson)
                 .then(this.view.updateview.bind(this.view))
+                .catch(this.view.displayError.bind(this.view))
                 this.search.reset()
                 this.spin.classList.toggle('stop')
             }
