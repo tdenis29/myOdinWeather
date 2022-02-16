@@ -12,6 +12,8 @@ export class View {
         this.visibility = document.getElementById('vis')
         this.speed = document.getElementById('windSpeed')
         this.humidity = document.getElementById('humidity')
+        this.weatherContainer = document.getElementById('weatherCardContainer')
+        this.spin = document.getElementById('spin')
         this.Celsiusdeg = '\u2103';
         this.Farendeg = '\u2109';
         this.pressureSym = "\u3371";
@@ -19,7 +21,6 @@ export class View {
     updateview(obj){
         // console.log(obj)
        let today = new Date().toDateString()
-       
        this.date.textContent = `${today}`
        this.location.textContent = `${obj.name}, ${obj.country}`
        //extract into own stuff
@@ -37,11 +38,19 @@ export class View {
         
         this.localStorage.setItem("currentTemp", JSON.stringify(obj.tempsArr))
         this.changeTemp()
+       
+        
+        setTimeout(this.showLoader, 1000); 
         
     }
-    showLoader(){
 
-    }
+    showLoader = (function () {
+        this.spin.classList.toggle('stop')
+        if(!this.weatherContainer.classList.contains('fade-in'))
+         this.weatherContainer.classList.add('fade-in')
+    }).bind(this);
+
+  
     renderForeCastCards(){
         
     }
@@ -51,7 +60,7 @@ export class View {
             return 
         } else {
             cacheTemps = JSON.parse(window.localStorage.getItem('currentTemp') || [] ) 
-            console.log(cacheTemps)
+            
         }
         
         this.tempSwitch.addEventListener('click', e => {

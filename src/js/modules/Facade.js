@@ -9,6 +9,7 @@ export class Facade {
         this.process = new Process()
         this.search = document.getElementById('search')
         this.searchCity = document.getElementById('searchCity')
+        this.spin = document.getElementById('spin')
     }
     run(){
         this.search.addEventListener('submit', e => {
@@ -18,6 +19,7 @@ export class Facade {
                 .then(this.process.processJson)
                 .then(this.view.updateview.bind(this.view))
                 this.search.reset()
+                this.spin.classList.toggle('stop')
             }
         })
     }

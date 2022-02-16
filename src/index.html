@@ -14,10 +14,10 @@
         <div class="top-header">
             <div class="input-container">
                 <form id="search">
-                    <label for="search">Search City
-                        <input type="text" max="50" name="search" id="searchCity" placeholder="Search City">  
-                        <button type="submit" class="submit"><i class="fa-solid fa-magnifying-glass"></i></button>  
+                    <label for="search">
+                        <input type="text" max="50" name="search" id="searchCity" placeholder="Search City">   
                     </label>
+                    <button type="submit" class="submit">Search</button> 
                 </form>
             </div>
 
@@ -31,7 +31,7 @@
             </div>
         </div>
     </header>
-
+    <div id="spin" class="spin stop"></div>
     <main>
         <div class="appendWeather">
 
@@ -39,7 +39,7 @@
                 <p id="date" style="text-align: center;" class="weather-card-top-date"></p>
             </div>
 
-            <div class="weather-card-container">
+            <div id="weatherCardContainer" class="weather-card-container">
 
                 <div class="weather-card-top">
 

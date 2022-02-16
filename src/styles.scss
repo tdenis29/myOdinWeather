@@ -17,6 +17,7 @@ body{
     background-position: top center;
     background-size: cover;
     background-attachment: fixed;
+    position: relative;
 }
 header{
     max-width: 90%;
@@ -34,23 +35,27 @@ header{
     margin: .5rem 0;
 }
 
-
 .input-container input {
     font-size: 1.25rem;
     height: 2rem;
     color: black;
     padding: .25rem;
-    width: 90%;
+    flex-basis: 100%;
+    
 }
 .input-container{
-    flex-basis: 30%;
+    flex-basis: 40%;
 }
-.form{
+#search{
     width: 100%;
+    display: flex;
+    align-items: flex-end;
 }
 .submit{
-    width: 2rem;
-    height: 1.5rem;
+    width: 5rem;
+    height: 2rem;
+    color: black;
+    font-size: 1.125rem;
 }
 .appendWeather{
     margin: 2rem 0;
@@ -61,21 +66,88 @@ header{
     width: 90%;
     margin: 0 auto;
     align-items: center;
- 
     background: rgba( 110, 186, 225, 0.6 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 3.5px );
     -webkit-backdrop-filter: blur( 3.5px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    opacity: 0;
+    animation: fadeIn .5s;
+    -webkit-animation: fadeIn .5s;
+    -moz-animation: fadeIn .5s;
+    -o-animation: fadeIn .5s;
+    -ms-animation: fadeIn s;
+    // background: rgba( 255, 255, 255, 0.6 );
+    // box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    // backdrop-filter: blur( 3.5px );
+    // -webkit-backdrop-filter: blur( 3.5px );
+    // border-radius: 10px;
+    // border: 1px solid rgba( 255, 255, 255, 0.18 ); 
+}
+.weather-card-container.fade-in{
+    animation: fadeIn .5s ease-in;
+    -webkit-animation: fadeIn .5s ease-in;
+    -moz-animation: fadeIn .5s ease-in;
+    -o-animation: fadeIn .5s ease-in;
+    -ms-animation: fadeIn .5s ease-in;
+    opacity: 1;
+    
+}
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
 
-    /* background: rgba( 255, 255, 255, 0.6 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 3.5px );
-    -webkit-backdrop-filter: blur( 3.5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
-
+  .spin {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+  }
+  @keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+.spin.stop{
+    display: none;
+}
+.date{
+    height: 24px;
 }
 .weather-card-top, 
 .weather-card-bottom {
